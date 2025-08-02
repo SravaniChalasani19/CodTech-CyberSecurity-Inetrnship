@@ -14,12 +14,13 @@
 
 ##OUTPUT
 
+<img width="1918" height="774" alt="Image" src="https://github.com/user-attachments/assets/13bc4cd8-9038-4845-bb8b-7da964a4fb52" />
 
+<img width="1919" height="582" alt="Image" src="https://github.com/user-attachments/assets/8e27f88c-6a6d-4010-a770-8fbc814509bc" />
 
+<img width="1917" height="671" alt="Image" src="https://github.com/user-attachments/assets/94452583-c756-4959-afd8-27866555e05a" />
 
-
-
-
+<img width="1918" height="576" alt="Image" src="https://github.com/user-attachments/assets/05ffd264-6782-40bb-b505-a21e37647e31" />
 
 
 
