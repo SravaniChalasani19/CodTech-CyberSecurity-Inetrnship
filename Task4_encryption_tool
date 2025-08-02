@@ -1,0 +1,32 @@
+import hashlib
+
+def get_file_hash(filepath):
+    sha256 = hashlib.sha256()
+    try:
+        with open(filepath, "rb") as f:
+            while True:
+                chunk = f.read(4096)
+                if not chunk:
+                    break
+                sha256.update(chunk)
+        return sha256.hexdigest()
+    except FileNotFoundError:
+        return None
+
+file_path = input("Enter file path to monitor: ").strip()
+original_hash = get_file_hash(file_path)
+
+if original_hash is None:
+    print("❌ File not found. Please check the path.")
+    exit()
+
+print(f"✅ Original Hash: {original_hash}")
+input("\nModify the file, SAVE it, then press Enter to re-check...")
+
+new_hash = get_file_hash(file_path)
+print(f"\n🔍 New Hash: {new_hash}")
+
+if new_hash == original_hash:
+    print("✅ File is intact. No changes detected.")
+else:
+    print("⚠ WARNING: File has been modified!")

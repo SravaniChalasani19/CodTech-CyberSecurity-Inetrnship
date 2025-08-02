@@ -1,0 +1,33 @@
+import socket
+import itertools
+
+def port_scanner(host):
+    print(f"Scanning {host} for open ports...")
+    for port in range(20, 1025):
+        s = socket.socket()
+        s.settimeout(0.5)
+        try:
+            s.connect((host, port))
+            print(f"✅ Port {port} is OPEN")
+            s.close()
+        except:
+            pass
+
+def brute_force_login(username_list, password_list, target_user):
+    for password in itertools.product(password_list, repeat=1):
+        print(f"Trying password: {''.join(password)}")
+        if ''.join(password) == 'admin123':  # Simulate correct password
+            print("✅ Login successful!")
+            return
+    print("❌ Brute-force failed.")
+
+if __name__ == "__main__":
+    print("1. Port Scanner\n2. Brute Force Simulation")
+    choice = input("Choose module: ")
+    if choice == "1":
+        host = input("Enter host (e.g., 127.0.0.1): ")
+        port_scanner(host)
+    elif choice == "2":
+        usernames = ["admin", "user"]
+        passwords = ["123", "admin123", "password"]
+        brute_force_login(usernames, passwords, "admin")
